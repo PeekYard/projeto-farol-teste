@@ -1,0 +1,26 @@
+name: "Peekyard · PR Guard"
+on:
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize, reopened, ready_for_review]
+
+permissions:
+  contents: read
+
+jobs:
+  pr-guard:
+    name: pr-guard
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - name: "Carregar governança confiável da main (não do PR)"
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: main
+          persist-credentials: false
+      - name: "Validar identidade imutável do autor"
+        env:
+          GITHUB_EVENT_NAME: ${{ github.event_name }}
+          GITHUB_EVENT_PATH: ${{ github.event_path }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: python3 .github/scripts/pr_guard.py
