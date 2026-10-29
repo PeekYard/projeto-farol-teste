@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Landing page demonstrativa usada exclusivamente para validar o processo de admissão da Peekyard.">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&display=swap">
+  <title>Projeto Farol — Teste de admissão Peekyard</title>
+  <style>
+    :root { color-scheme: light; font-family: "DM Sans", system-ui, sans-serif; background: #f8f9f6; color: #1d2b31; }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 100vh; display: grid; place-items: center; padding: 24px; }
+    main { width: min(100%, 700px); padding: clamp(24px, 5vw, 64px); background: #fff; border: 1px solid #e0e6e0; border-radius: 26px; box-shadow: 0 18px 50px #192d2612; }
+    .eyebrow { font-size: 13px; font-weight: 700; letter-spacing: .11em; text-transform: uppercase; color: #6645c6; }
+    h1 { font-size: clamp(36px, 7vw, 58px); line-height: 1.13; letter-spacing: -.04em; margin: 20px 0; }
+    p { line-height: 1.8; color: #536267; font-size: 17px; }
+    .notice { background: #e9f8e1; padding: 15px 20px; border-radius: 12px; font-size: 14px; margin: 26px 0; }
+    a { display: inline-block; margin-top: 8px; padding: 13px 20px; border-radius: 999px; background: #24323a; color: white; font-weight: 700; text-decoration: none; }
+    footer { font-size: 13px; color: #63716c; margin-top: 28px; }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="eyebrow">Demonstração · Peekyard Admissions</div>
+    <h1>Projeto Farol</h1>
+    <p>Um experimento para validar como ideias independentes podem contar sua história em uma landing page simples, acessível e transparente.</p>
+    <p>Esta página é um exemplo técnico. Não representa um serviço ou produto disponível para contratação.</p>
+    <div class="notice">Ambiente de teste. Nenhuma página foi publicada na vitrine peekyard.com.</div>
+    <a href="https://github.com/PeekYardMaster" rel="noopener noreferrer">Contato: perfil GitHub do responsável</a>
+    <footer id="status">Página de demonstração.</footer>
+  </main>
+  <!-- WebSec fixture: release exato com integridade; sem dependência funcional do jQuery. -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+          integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+          crossorigin="anonymous"></script>
+  <script>
+    document.getElementById("status").textContent = "Página de demonstração · carregada com sucesso";
+  </script>
+</body>
+</html>
